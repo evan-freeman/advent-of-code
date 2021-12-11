@@ -1,7 +1,6 @@
 from itertools import product
 
 import numpy as np
-from numpy.core.fromnumeric import shape
 
 with open("2021/day4/input.txt") as f:
     input = f.read()
@@ -16,6 +15,13 @@ board0_list = board0.strip("/n").split()
 combs = list(product(range(5), range(5)))
 board0 = np.array(board0_list, dtype=int).reshape(5, 5)
 print(board0)
+
+# class Cell:
+#     def __init__(self):
+
+
+# class Board:
+#     def __init__(self):
 
 
 # print(board0_list)
