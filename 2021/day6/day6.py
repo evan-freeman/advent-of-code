@@ -1,3 +1,6 @@
+import time
+
+
 def read_input(file):
     with open(file) as f:
         input = f.read()
@@ -19,27 +22,30 @@ def simulate_day(fishes):
     return fishes
 
 
-def simulate_n_days(n, fishes):
+def simulate_n_days(num_days, fishes):
     """This function simulates n days of fishes breeding"""
     day = 1
-    while day <= n:
-        print(day)
+    while day <= num_days:
         fishes = simulate_day(fishes)
         day += 1
     return fishes
 
 
-def main(file=None, input=None, n=80):
+def main(file=None, input=None, num_days=80):
+    total_start = time.perf_counter()
     if not input:
         input = read_input(file)
     fishes = clean_input(input)
-    fishes = simulate_n_days(n, fishes)
+    fishes = simulate_n_days(num_days, fishes)
     num_fishes = len(fishes)
-    # print(fishes)
-    print(f"{num_fishes=}")
+    total_end = time.perf_counter()
+    total_total_time = total_end - total_start
+    return num_fishes
 
 
 if __name__ == "__main__":
-    file = "2021/day6/input.txt"
-    # input = "3,4,3,1,2"
-    main(file=file, n=256)
+    # file = "2021/day6/input.txt"
+    input = "3,4,3,1,2"
+    num_days = 80
+    num_fishes = main(input=input, num_days=80)
+    print(f"After {num_days} days, there are {num_fishes} fish.")
