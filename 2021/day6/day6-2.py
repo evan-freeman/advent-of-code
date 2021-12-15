@@ -40,6 +40,6 @@ def main(file=None, input=None, n=80):
 
 
 if __name__ == "__main__":
-    file = "2021/day6/input.txt"
-    # input = "3,4,3,1,2"
-    main(file=file, n=256)
+    # file = "2021/day6/input.txt"
+    input = "3,4,3,1,2"
+    main(input=input, n=18)
