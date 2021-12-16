@@ -8,6 +8,8 @@ from day6 import main
     [
         ("3,4,3,1,2", 18, 26),
         ("3,4,3,1,2", 80, 5934),
+        ("0", 80, 1421),
+        ("0", 18, 7),
     ],
 )
 def test_main(input, num_days, output):

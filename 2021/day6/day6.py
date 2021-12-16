@@ -45,7 +45,7 @@ def main(file=None, input=None, num_days=80):
 
 if __name__ == "__main__":
     # file = "2021/day6/input.txt"
-    input = "3,4,3,1,2"
-    num_days = 80
-    num_fishes = main(input=input, num_days=80)
+    input = "0"
+    num_days = 18
+    num_fishes = main(input=input, num_days=num_days)
     print(f"After {num_days} days, there are {num_fishes} fish.")
