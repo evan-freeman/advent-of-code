@@ -22,35 +22,28 @@ def simulate_day(fishes):
     return fishes
 
 
-def simulate_n_days(n, fishes):
+def simulate_n_days(num_days, fishes):
     """This function simulates n days of fishes breeding"""
     day = 1
-    while day <= n:
-        start = time.perf_counter()
+    while day <= num_days:
         print(f"{day=}")
+        print(f"{fishes=}")
         fishes = simulate_day(fishes)
         day += 1
-        end = time.perf_counter()
-        total_time = end - start
-        print(f"{total_time=:.2f} seconds")
     return fishes
 
 
-def main(file=None, input=None, n=80):
-    total_start = time.perf_counter()
+def slow_solve_day_6(file=None, input=None, num_days=80):
     if not input:
         input = read_input(file)
     fishes = clean_input(input)
-    fishes = simulate_n_days(n, fishes)
+    fishes = simulate_n_days(num_days, fishes)
     num_fishes = len(fishes)
-    # print(fishes)
-    print(f"{num_fishes=}")
-    total_end = time.perf_counter()
-    total_total_time = total_end - total_start
-    print(f"{total_total_time=:.2f}s")
+    return num_fishes
 
 
 if __name__ == "__main__":
-    file = "2021/day6/input.txt"
-    # input = "3,4,3,1,2"
-    main(file=file, n=256)
+    # file = "2021/day6/input.txt"
+    input = "0"
+    output = slow_solve_day_6(input=input, num_days=18)
+    print(output)
